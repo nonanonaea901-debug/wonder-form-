@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل المؤثرة — وندر هي</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --p50:#EEEDFE;--p100:#CECBF6;--p200:#AFA9EC;--p400:#7F77DD;
+    --p600:#534AB7;--p800:#3C3489;--p900:#26215C;
+    --gold:#C9A96E;--cream:#FBF8FF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Tajawal',sans-serif;background:var(--cream);color:#2a1a3e;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:radial-gradient(ellipse 55% 35% at 5% 0%,rgba(206,203,246,.3) 0%,transparent 55%),
+    radial-gradient(ellipse 45% 40% at 95% 95%,rgba(252,207,232,.22) 0%,transparent 55%)}
+  .page{position:relative;z-index:1;max-width:680px;margin:0 auto;padding:0 1.5rem 5rem}
+
+  /* COVER */
+  .cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+  .bp{position:absolute;font-size:140px;opacity:.05;pointer-events:none;animation:drift 12s ease-in-out infinite}
+  .bp.a{top:-20px;left:-30px}.bp.b{bottom:-30px;right:-20px;font-size:110px;animation-delay:3s}
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(6deg)}}
+  .brand-tag{font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:12px}
+  .tl{width:32px;height:.5px;background:var(--gold);opacity:.7}
+  .icon-wrap{margin-bottom:1.5rem;animation:bloom 3s ease-in-out infinite}
+  @keyframes bloom{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  .cover-title{font-family:'Playfair Display',serif;font-size:clamp(30px,7vw,54px);font-weight:400;color:var(--p900);line-height:1.15;margin-bottom:.4rem}
+  .cover-title span{font-style:italic;color:var(--p600)}
+  .cover-sub{font-size:14px;color:#7a6a90;letter-spacing:.08em;margin-bottom:2rem}
+  .orn{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:2rem}
+  .ol{width:48px;height:.5px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .od{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.7}
+  .oq{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);opacity:.85}
+  .cover-intro{font-size:15px;font-weight:300;line-height:2;color:#5a4a6e;max-width:480px}
+  .cover-intro strong{font-weight:500;color:var(--p800)}
+
+  /* SECTIONS */
+  .slide{background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border:.5px solid rgba(206,203,246,.6);border-radius:20px;padding:2rem 1.75rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+  .slide::before{content:'';position:absolute;top:0;right:0;width:100px;height:100px;background:radial-gradient(circle,rgba(201,169,110,.05) 0%,transparent 70%);pointer-events:none}
+  .slide-num{font-size:10px;font-weight:700;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.5rem}
+  .slide-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--p900);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:.5px solid rgba(206,203,246,.5)}
+  .slide-title span{font-style:italic;color:var(--p600)}
+  .slide-text{font-size:14.5px;font-weight:300;line-height:2;color:#3a2a50}
+  .slide-text strong{font-weight:500;color:var(--p800)}
+
+  /* POINTS */
+  .points{margin-top:1rem}
+  .point{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem;padding:1rem 1.2rem;background:var(--p50);border-radius:12px;border:.5px solid var(--p100)}
+  .point-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+  .point-text{font-size:13.5px;line-height:1.8;color:#3a2a50}
+  .point-text strong{color:var(--p800);font-weight:500}
+
+  /* STEPS */
+  .steps{margin-top:1rem;counter-reset:step}
+  .step{display:flex;align-items:flex-start;gap:14px;margin-bottom:1rem}
+  .step-num{width:32px;height:32px;border-radius:50%;background:var(--p800);color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .step-text{font-size:13.5px;line-height:1.8;color:#3a2a50;padding-top:5px}
+
+  /* DO DONT */
+  .dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1rem}
+  .dd-box{border-radius:12px;padding:1rem;border:.5px solid}
+  .dd-yes{background:#f0fdf4;border-color:#86efac}
+  .dd-no{background:#fff1f2;border-color:#fca5a5}
+  .dd-label{font-size:11px;font-weight:700;letter-spacing:.1em;margin-bottom:.5rem;display:flex;align-items:center;gap:6px}
+  .dd-yes .dd-label{color:#166534}
+  .dd-no .dd-label{color:#991b1b}
+  .dd-item{font-size:13px;line-height:1.7;color:#374151;margin-bottom:.3rem}
+
+  /* PRINCIPLES */
+  .principles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:1rem}
+  .principle{background:var(--p50);border:.5px solid var(--p100);border-radius:12px;padding:1rem;text-align:center}
+  .principle-icon{font-size:24px;margin-bottom:.5rem}
+  .principle-title{font-size:13px;font-weight:500;color:var(--p800);margin-bottom:.3rem}
+  .principle-text{font-size:12px;color:#5a4a6e;line-height:1.6}
+
+  /* FOOTER SLIDE */
+  .cover-end{text-align:center;padding:3rem 2rem;margin-top:1rem}
+  .end-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:var(--p900);margin-bottom:.5rem}
+  .end-title span{font-style:italic;color:var(--p600)}
+  .end-brand{font-size:12px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-top:1rem}
+
+  @media(max-width:500px){.dd-grid,.principles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="bp a">🌸</div>
+  <div class="bp b">🌷</div>
+  <div class="brand-tag"><span class="tl"></span>Wonder Hi<span class="tl"></span></div>
+  <div class="icon-wrap">
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="31" stroke="#CECBF6" stroke-width="0.5"/>
+      <ellipse cx="32" cy="23" rx="5" ry="8.5" fill="#AFA9EC" opacity="0.5"/>
+      <ellipse cx="32" cy="23" rx="3" ry="5.5" fill="#7F77DD" opacity="0.65"/>
+      <ellipse cx="39.5" cy="27.5" rx="5" ry="8.5" fill="#AFA9EC" opacity="0.42" transform="rotate(60 39.5 27.5)"/>
+      <ellipse cx="24.5" cy="27.5" rx="5" ry="8.5" fill="#AFA9EC" opacity="0.42" transform="rotate(-60 24.5 27.5)"/>
+      <ellipse cx="40.5" cy="35" rx="5" ry="8.5" fill="#CECBF6" opacity="0.52" transform="rotate(120 40.5 35)"/>
+      <ellipse cx="23.5" cy="35" rx="5" ry="8.5" fill="#CECBF6" opacity="0.52" transform="rotate(-120 23.5 35)"/>
+      <ellipse cx="32" cy="39" rx="5" ry="8.5" fill="#CECBF6" opacity="0.48" transform="rotate(180 32 39)"/>
+      <circle cx="32" cy="29" r="5.5" fill="#534AB7" opacity="0.82"/>
+      <circle cx="32" cy="29" r="2.8" fill="#C9A96E" opacity="0.9"/>
+      <line x1="32" y1="38" x2="32" y2="55" stroke="#5DCAA5" stroke-width="1.3" stroke-linecap="round"/>
+      <ellipse cx="26" cy="48" rx="4" ry="6.5" fill="#9FE1CB" opacity="0.45" transform="rotate(-22 26 48)"/>
+      <ellipse cx="38" cy="46" rx="4" ry="6.5" fill="#9FE1CB" opacity="0.42" transform="rotate(22 38 46)"/>
+    </svg>
+  </div>
+  <div class="cover-title">Marketing Policy<br><span>Wonder</span></div>
+  <div class="cover-sub">دليل المؤثرة — Beauty & Skincare</div>
+  <div class="orn"><span class="ol"></span><span class="od"></span><span class="oq"></span><span class="od"></span><span class="ol"></span></div>
+  <p class="cover-intro">
+    صديقة كل بنية عراقية في رحلة عنايتها ببشرتها وشعرها.<br>
+    نأمّن لها المنتجات الأصلية ونكون وياها <strong>خطوة بخطوة</strong><br>
+    حتى تحصل على البشرة التي تحلم بيها.
+  </p>
+</div>
+
+<!-- من نحن -->
+<div class="slide">
+  <div class="slide-num">01</div>
+  <div class="slide-title">من <span>نحن؟</span></div>
+  <div class="slide-text">
+    نحن صديقات كل بنية عراقية خلال رحلة عنايتها ببشرتها وشعرها.<br><br>
+    نأمّن لها <strong>المنتجات الأصلية</strong> ونكون وياها خطوة بخطوة حتى تحصل على البشرة التي تحلم بيها — بمساعدة فريق من الأطباء والصيدلانيات والأخصائيات.
+  </div>
+</div>
+
+<!-- هدفنا -->
+<div class="slide">
+  <div class="slide-num">02</div>
+  <div class="slide-title">شنو <span>هدفنا؟</span></div>
+  <div class="slide-text">نساعد كل بنية عراقية برسم الابتسامة على وجهها وتعزيز ثقتها بنفسها لما نحل مشاكل بشرتها وشعرها بمساعدة فريق من الأطباء والصيدلانيات والأخصائيات.</div>
+</div>
+
+<!-- مبادئنا -->
+<div class="slide">
+  <div class="slide-num">03</div>
+  <div class="slide-title"><span>مبادئنا</span></div>
+  <div class="principles">
+    <div class="principle"><div class="principle-icon">💜</div><div class="principle-title">مصداقية وشفافية</div><div class="principle-text">نتعامل بوضوح تام مع كل زبونة ومؤثرة</div></div>
+    <div class="principle"><div class="principle-icon">✨</div><div class="principle-title">راحة الزبونة</div><div class="principle-text">تجربتها وإرضاؤها هي غايتنا الأولى</div></div>
+    <div class="principle"><div class="principle-icon">🤝</div><div class="principle-title">لطافة وودية</div><div class="principle-text">نتعامل مع الجميع بتواضع واحترام</div></div>
+    <div class="principle"><div class="principle-icon">🌸</div><div class="principle-title">تجربة مميزة</div><div class="principle-text">نسعى لتقديم تجربة لا تُنسى في كل خطوة</div></div>
+  </div>
+</div>
+
+<!-- وعدنا -->
+<div class="slide">
+  <div class="slide-num">04</div>
+  <div class="slide-title">وعدنا <span>لكِ</span></div>
+  <div class="slide-text">لكل صديقة من أصدقاء وندر هي:</div>
+  <div class="points">
+    <div class="point"><div class="point-icon">💜</div><div class="point-text"><strong>متابعة كل استشارة</strong> خطوة بخطوة والالتزام معك حتى الوصول للنتيجة المتفق عليها</div></div>
+    <div class="point"><div class="point-icon">✅</div><div class="point-text"><strong>ضمانة تأمين المنتجات الأصلية</strong> الموثوقة فقط — أي منتج غير أصلي يُستبدل من باب البيت</div></div>
+    <div class="point"><div class="point-icon">🩺</div><div class="point-text">فريق من <strong>الصيدلانيات وأخصائيات البشرة</strong> جاهزات لمساعدتك في كل وقت</div></div>
+  </div>
+</div>
+
+<!-- نقاط التسويق -->
+<div class="slide">
+  <div class="slide-num">05</div>
+  <div class="slide-title">نقاط <span>التسويق الثلاث</span></div>
+  <div class="points">
+    <div class="point"><div class="point-icon">1️⃣</div><div class="point-text">ذكر وجود <strong>استشارات مجانية</strong> وصيدلانيات وأخصائيات بشرة لدى فريق وندر هي، ومنتجات أصلية مع الضمانة</div></div>
+    <div class="point"><div class="point-icon">2️⃣</div><div class="point-text">التركيز على <strong>تجربتكِ الشخصية</strong> مع وندر هي — الاستشارة والمنتجات والاستفادة منها بطريقة واقعية بعيدة عن الإعلانات الموجهة</div></div>
+    <div class="point"><div class="point-icon">3️⃣</div><div class="point-text">ذكر <strong>طريقة الحصول على الاستشارة المجانية</strong> — تعبئة الاستبيان المرسل للحصول على معلومات نوع البشرة ومشاكلها</div></div>
+  </div>
+</div>
+
+<!-- خطوات الاستشارة -->
+<div class="slide">
+  <div class="slide-num">06</div>
+  <div class="slide-title">خطوات <span>الاستشارة</span></div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text">التواصل وإرسال رسالة على صفحة انستاغرام وندر هي</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">إرسال استبيان بأسئلة للمساعدة في الاستشارة</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">تحديد موعد للاستشارة المجانية</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">تتواصل الصيدلانية في الوقت المحدد لإعطاء الاستشارة</div></div>
+  </div>
+</div>
+
+<!-- اشتراطات التصوير -->
+<div class="slide">
+  <div class="slide-num">07</div>
+  <div class="slide-title">اشتراطات <span>التصوير</span></div>
+  <div class="dd-grid">
+    <div class="dd-box dd-yes">
+      <div class="dd-label">✓ مطلوب</div>
+      <div class="dd-item">جودة تصوير 12MP على الأقل</div>
+      <div class="dd-item">مكان نظيف ومرتب وإضاءة جيدة</div>
+      <div class="dd-item">مكياج خفيف وطبيعي</div>
+      <div class="dd-item">أظافر نظيفة وبسيطة</div>
+      <div class="dd-item">إظهار بوكس وندر هي خلال التصوير</div>
+    </div>
+    <div class="dd-box dd-no">
+      <div class="dd-label">✗ يُتجنب</div>
+      <div class="dd-item">جودة تصوير ضعيفة أو ضبابية</div>
+      <div class="dd-item">خلفيات مشتتة (مطبخ، فوضى)</div>
+      <div class="dd-item">مكياج ثقيل وصارخ</div>
+      <div class="dd-item">أظافر طويلة أو ملونة بشدة</div>
+      <div class="dd-item">جميع المنتجات من ماركة واحدة</div>
+    </div>
+  </div>
+</div>
+
+<!-- شروط النشر -->
+<div class="slide">
+  <div class="slide-num">08</div>
+  <div class="slide-title">شروط <span>النشر</span></div>
+  <div class="points">
+    <div class="point"><div class="point-icon">📋</div><div class="point-text">يتم <strong>الاتفاق على محتوى الإعلان</strong> قبل التصوير وتحديد تاريخ للنشر</div></div>
+    <div class="point"><div class="point-icon">💊</div><div class="point-text">اختيار المنتجات في الإعلان <strong>يتم بعد الاستشارة</strong> وحسب الحالة (تحددها الصيدلانية)</div></div>
+    <div class="point"><div class="point-icon">🎯</div><div class="point-text">التركيز على <strong>التجربة الشخصية</strong> مع وندر هي والاستشارة المخصصة والمنتجات والخدمات</div></div>
+    <div class="point"><div class="point-icon">✉️</div><div class="point-text"><strong>إرسال محتوى الإعلان قبل نشره</strong> للتأكد من موافقته لجميع الشروط</div></div>
+  </div>
+</div>
+
+<!-- نهاية -->
+<div class="cover-end">
+  <div class="icon-wrap" style="margin-bottom:1.2rem">
+    <svg width="50" height="50" viewBox="0 0 64 64" fill="none">
+      <ellipse cx="32" cy="24" rx="5" ry="8" fill="#AFA9EC" opacity="0.5"/>
+      <ellipse cx="39" cy="28" rx="5" ry="8" fill="#AFA9EC" opacity="0.4" transform="rotate(60 39 28)"/>
+      <ellipse cx="25" cy="28" rx="5" ry="8" fill="#AFA9EC" opacity="0.4" transform="rotate(-60 25 28)"/>
+      <circle cx="32" cy="28" r="5" fill="#534AB7" opacity="0.8"/>
+      <circle cx="32" cy="28" r="2.5" fill="#C9A96E" opacity="0.9"/>
+    </svg>
+  </div>
+  <div class="end-title">Good luck! <span>✨</span></div>
+  <div class="end-brand">Wonder Hi · Beauty & Skincare</div>
+</div>
+
+</div>
+</body>
+</html>
